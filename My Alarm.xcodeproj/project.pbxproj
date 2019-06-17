@@ -15,6 +15,7 @@
 		851F020222B8310B00B32D2A /* AlarmDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F020122B8310B00B32D2A /* AlarmDetailTableViewController.swift */; };
 		851F020422B8315200B32D2A /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F020322B8315200B32D2A /* SwitchTableViewCell.swift */; };
 		851F020622B83A8F00B32D2A /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F020522B83A8F00B32D2A /* Alarm.swift */; };
+		851F020822B83D2100B32D2A /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F020722B83D2100B32D2A /* AlarmController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		851F020122B8310B00B32D2A /* AlarmDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailTableViewController.swift; sourceTree = "<group>"; };
 		851F020322B8315200B32D2A /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		851F020522B83A8F00B32D2A /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		851F020722B83D2100B32D2A /* AlarmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		851F01FD22B82E1900B32D2A /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				851F020722B83D2100B32D2A /* AlarmController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				851F020622B83A8F00B32D2A /* Alarm.swift in Sources */,
 				851F01E822B82A5400B32D2A /* AppDelegate.swift in Sources */,
 				851F020022B82FB200B32D2A /* AlarmListTableViewController.swift in Sources */,
+				851F020822B83D2100B32D2A /* AlarmController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import Foundation
 
 class Alarm {
     
-    var fireDate = Date()
+    var fireDate: Date
     var name: String
     var enabled: Bool
     var uuid: String
@@ -20,10 +20,18 @@ class Alarm {
         }
     }
     
-    init(name: String, enabled: Bool, uuid: String) {
+    init(fireDate: Date, name: String, enabled: Bool, uuid: String) {
+        self.fireDate = fireDate
         self.name = name
         self.enabled = enabled
         self.uuid = uuid
     }
+}
+
+extension Alarm: Equatable {
+    static func == (lhs: Alarm, rhs: Alarm) -> Bool {
+        return lhs.fireDate == rhs.fireDate && lhs.name == rhs.name && lhs.enabled == rhs.enabled && lhs.uuid == rhs.uuid
+    }
+    
     
 }
