@@ -16,11 +16,15 @@ class Alarm {
     var uuid: String
     var fireTimeAsString: String {
         get{
-            return DateFormatter().string(from: fireDate)
+            let formatter = DateFormatter()
+            formatter.timeZone = TimeZone.current
+            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+            let dateString = formatter.string(from: fireDate)
+            return dateString
         }
     }
     
-    init(fireDate: Date, name: String, enabled: Bool, uuid: String) {
+    init(fireDate: Date, name: String, enabled: Bool = true, uuid: String = UUID().uuidString) {
         self.fireDate = fireDate
         self.name = name
         self.enabled = enabled

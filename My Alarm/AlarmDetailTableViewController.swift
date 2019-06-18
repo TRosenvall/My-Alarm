@@ -14,6 +14,10 @@ class AlarmDetailTableViewController: UITableViewController {
     @IBOutlet weak var textFieldLabel: UIView!
     @IBOutlet weak var buttonTextLabel: UIButton!
     
+    var alarm: Alarm?
+    guard let alarmIsOn = alarm.enabled else {return}
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

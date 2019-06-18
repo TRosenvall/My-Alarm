@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8cO-Na-6Qy">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,44 +18,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="81" id="pTh-xq-bHk" customClass="SwitchTableViewCell" customModule="My_Alarm" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="81"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="99" id="pTh-xq-bHk" customClass="SwitchTableViewCell" customModule="My_Alarm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pTh-xq-bHk" id="qkh-p5-gD1" customClass="SwitchTableViewCell" customModule="My_Alarm" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="98.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZqO-nj-neb">
-                                            <rect key="frame" x="8" y="8" width="321" height="64.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="opF-iS-bta">
+                                            <rect key="frame" x="8" y="8" width="398" height="82.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F7-Hi-QwP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="321" height="28.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJJ-sH-JDk">
-                                                    <rect key="frame" x="0.0" y="36.5" width="321" height="28"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZqO-nj-neb">
+                                                    <rect key="frame" x="0.0" y="21" width="341" height="41"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F7-Hi-QwP">
+                                                            <rect key="frame" x="0.0" y="0.0" width="341" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJJ-sH-JDk">
+                                                            <rect key="frame" x="0.0" y="20.5" width="341" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="341" id="MwG-W8-uRD"/>
+                                                                <constraint firstAttribute="height" constant="20.5" id="NWB-tL-K40"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4G-wp-XB5">
+                                                    <rect key="frame" x="349" y="26" width="51" height="31"/>
+                                                </switch>
                                             </subviews>
                                         </stackView>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4G-wp-XB5">
-                                            <rect key="frame" x="337" y="25" width="51" height="31"/>
-                                        </switch>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="f4G-wp-XB5" firstAttribute="centerY" secondItem="qkh-p5-gD1" secondAttribute="centerY" id="Kcx-fN-wkb"/>
-                                        <constraint firstItem="f4G-wp-XB5" firstAttribute="leading" secondItem="ZqO-nj-neb" secondAttribute="trailing" constant="8" id="Obh-Tt-1J9"/>
-                                        <constraint firstItem="ZqO-nj-neb" firstAttribute="leading" secondItem="qkh-p5-gD1" secondAttribute="leading" constant="8" id="efQ-oZ-VxY"/>
-                                        <constraint firstAttribute="bottom" secondItem="ZqO-nj-neb" secondAttribute="bottom" constant="8" id="pzg-2S-P9T"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="f4G-wp-XB5" secondAttribute="trailing" constant="8" id="uhG-nL-aYM"/>
-                                        <constraint firstItem="ZqO-nj-neb" firstAttribute="top" secondItem="qkh-p5-gD1" secondAttribute="top" constant="8" id="vfz-6a-N3L"/>
+                                        <constraint firstAttribute="trailing" secondItem="opF-iS-bta" secondAttribute="trailing" constant="8" id="VMN-LM-2VS"/>
+                                        <constraint firstItem="opF-iS-bta" firstAttribute="leading" secondItem="qkh-p5-gD1" secondAttribute="leading" constant="8" id="rtB-aW-UtV"/>
+                                        <constraint firstAttribute="bottom" secondItem="opF-iS-bta" secondAttribute="bottom" constant="8" id="uEI-Bg-hd6"/>
+                                        <constraint firstItem="opF-iS-bta" firstAttribute="top" secondItem="qkh-p5-gD1" secondAttribute="top" constant="8" id="wd8-yR-mdZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="alarmSwitch" destination="f4G-wp-XB5" id="23P-eX-pfZ"/>
                                     <outlet property="nameLabel" destination="oJJ-sH-JDk" id="2c0-d9-vCm"/>
                                     <outlet property="timeLabel" destination="0F7-Hi-QwP" id="njp-9q-t1L"/>
                                     <segue destination="Gym-nu-b64" kind="show" id="KLC-zU-AvB"/>
