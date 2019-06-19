@@ -11,86 +11,57 @@ import UIKit
 class AlarmDetailTableViewController: UITableViewController {
 
     @IBOutlet weak var datePickerLabel: UIDatePicker!
-    @IBOutlet weak var textFieldLabel: UIView!
+    @IBOutlet weak var textFieldLabel: UITextField!
     @IBOutlet weak var buttonTextLabel: UIButton!
     
-    var alarm: Alarm?
-    guard let alarmIsOn = alarm.enabled else {return}
-    
+    var alarm: Alarm? {
+        didSet {
+            loadViewIfNeeded()
+            updateViews()
+        }
+    }
+    var alarmIsOn: Bool {
+        get {
+            guard let alarmEnabled = alarm?.enabled else {return true}
+            return alarmEnabled
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     @IBAction func enableButtonTapped(_ sender: Any) {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let name = textFieldLabel.text else {return}
+        if let alarm = alarm {
+            AlarmController.sharedInstance.updateAlarm(alarm: alarm, fireDate: datePickerLabel.date, name: name, enabled: alarm.enabled)
+        } else {
+            AlarmController.sharedInstance.addAlarm(fireDate: datePickerLabel.date, name: name, enabled: true)
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    private func updateViews() {
+        guard let alarm = alarm else {return}
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        guard let date = dateFormatter.date(from: alarm.fireTimeAsString) else {return}
+        datePickerLabel.date = date
+        textFieldLabel.text = alarm.name
+        buttonTextLabel.setTitle("On", for: .normal)
+        if alarm.enabled {
+            buttonTextLabel.setTitle("On", for: .normal)
+        } else {
+            buttonTextLabel.setTitle("Off", for: .disabled)
+        }
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+    
     /*
     // MARK: - Navigation
 

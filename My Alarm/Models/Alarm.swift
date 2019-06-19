@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Alarm {
+class Alarm: Codable {
     
     var fireDate: Date
     var name: String
@@ -18,7 +18,7 @@ class Alarm {
         get{
             let formatter = DateFormatter()
             formatter.timeZone = TimeZone.current
-            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+            formatter.dateFormat = "HH:mm"
             let dateString = formatter.string(from: fireDate)
             return dateString
         }

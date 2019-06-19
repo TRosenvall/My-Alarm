@@ -25,6 +25,7 @@ class SwitchTableViewCell: UITableViewCell {
     
     @IBAction func switchValueChanged(_ sender: Any) {
         delegate?.switchCellSwitchValueChanged(cell: self)
+        AlarmController.sharedInstance.saveToPersistentStore()
     }
     
     func updateViews() {
